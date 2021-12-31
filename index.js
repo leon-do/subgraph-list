@@ -7,7 +7,7 @@ async function main() {
   let subgraphs = [];
   let length = 1;
   while (length > 0) {
-    const response = await fetch(skip);
+    const response = await fetchSubgraph(skip);
     subgraphs = [...subgraphs, ...response];
     length++;
     skip += 300;
@@ -29,7 +29,7 @@ async function main() {
   fs.writeFileSync("./README.md", JSON.stringify(subgraphs, null, 2));
 }
 
-async function fetch(skip) {
+async function fetchSubgraph(skip) {
   const url =
     "https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-mainnet";
   const query = `
