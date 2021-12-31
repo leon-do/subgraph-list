@@ -18,7 +18,7 @@ async function main() {
   subgraphs = subgraphs
     .map((subgraph) => {
       return {
-        id: subgraph.id,
+        explorer: "https://thegraph.com/explorer/subgraph?id=" + subgraph.id,
         name: subgraph.displayName,
         website: subgraph.website,
         fees: subgraph.currentVersion.subgraphDeployment.queryFeesAmount,
