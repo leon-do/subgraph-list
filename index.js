@@ -26,7 +26,7 @@ async function main() {
     })
     .sort((a, b) => parseInt(b.fees) - parseInt(a.fees));
 
-  fs.writeFileSync("./subgraphs.json", JSON.stringify(subgraphs, null, 2));
+  fs.writeFileSync("./README.md", JSON.stringify(subgraphs, null, 2));
 }
 
 async function fetch(skip) {
